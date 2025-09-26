@@ -19,7 +19,12 @@ import _10_Demos_et_tests.testerEnLot
  */
 
 fun findFirstValue(value: Number, list: List<Number>): Int {
-    // A COMPLETER ICI
+    for (i in 0..list.lastIndex) {
+        if (list[i] == value) {
+            return i
+            break
+        }
+    }
     return -1
 }
 
