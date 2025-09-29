@@ -23,7 +23,12 @@ fun algoGloutonRenduMonnaie(somme: Double, pieces: List<Double>): Map<Double, In
         renduDeMonnaieCentimes[piece * 100] = 0 // Les montantes sont exprimés en centimes.
     }
 
-    // A COMPLETER ICI
+    if(resteRendu>0) {
+        for (paire in renduDeMonnaieCentimes) {
+            renduDeMonnaieCentimes[paire.key] = (resteRendu/paire.key).toInt()
+            resteRendu-=paire.key*paire.value
+        }
+    }
 
     // Conversion de centime vers unité monétaire :
     for (paire in renduDeMonnaieCentimes) {

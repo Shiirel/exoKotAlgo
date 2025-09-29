@@ -20,9 +20,20 @@ import _10_Demos_et_tests.testerEnLot
 fun supprimerDoublons(liste: List<Int>): MutableList<Int> {
     // Copie de la liste :
     val listeCopie = liste.toMutableList()
+    var i = 0
+    var j = 0
 
-    // A COMPLETER ICI
-
+    while(i<=listeCopie.lastIndex) {
+        j = i+1
+        while(j<=listeCopie.lastIndex) {
+            if(listeCopie[i] == listeCopie[j]) {
+                listeCopie.removeAt(j)
+            } else {
+                j++
+            }
+        }
+        i++
+    }
     return listeCopie
 }
 

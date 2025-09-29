@@ -19,10 +19,22 @@ import _10_Demos_et_tests.testerEnLot
 fun triParSelection(liste: List<Int>): MutableList<Int> {
     // Copie de la liste :
     val listeCopie = liste.toMutableList()
-
+    var jMini = 0
+    var temp : Int
     // Algorithme de tri :
-    // A COMPLETER ICI
-
+    for (i in 0..listeCopie.lastIndex-1) {
+        jMini = i
+        for (j in i+1..listeCopie.lastIndex) {
+            if(listeCopie[j] < listeCopie[jMini]) {
+                jMini = j
+            }
+        }
+        if(jMini!=i) {
+            temp = listeCopie[i]
+            listeCopie[i] = listeCopie[jMini]
+            listeCopie[jMini] = temp
+        }
+    }
     return listeCopie
 }
 

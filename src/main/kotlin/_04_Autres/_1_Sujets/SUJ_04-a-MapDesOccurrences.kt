@@ -18,9 +18,18 @@ import _10_Demos_et_tests.testerEnLot
 
 fun mapDesOccurrences(liste: List<Int>): Map<Int, Int> {
     val resultat = mutableMapOf<Int, Int>()
+    var compt = 0
 
-    // A COMPLETER ICI
-
+    for(i in 0..liste.lastIndex) {
+        for(j in 0..liste.lastIndex) {
+            if(liste[j] == liste[i]) {
+                compt+=1
+                resultat[liste[i]] = compt
+            }
+        }
+        compt = 0
+    }
+    print(resultat)
     return resultat
 }
 

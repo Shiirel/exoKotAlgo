@@ -1,4 +1,4 @@
-package _03_Manipulation_dans_une_liste._1_Sujets
+package _03_Manipulation_dans_une_liste._2_Sujets
 
 import _10_Demos_et_tests.DataTestListList
 import _10_Demos_et_tests.demoEnLot
@@ -17,9 +17,17 @@ import _10_Demos_et_tests.testerEnLot
 
 fun zeroGaucheUnDroit(liste: List<Int>): MutableList<Int> {
     val copieListe = liste.toMutableList()
+    var iDeb = 0
+    var iFin = copieListe.lastIndex
 
-    // A COMPLETER ICI
-
+    while(iDeb != iFin) {
+        if(copieListe[iDeb] == 1) {
+            copieListe[iDeb] = copieListe[iFin]
+            copieListe[iFin] = 1
+            iFin--
+        }
+        iDeb++
+    }
     return copieListe
 }
 

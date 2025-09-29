@@ -19,8 +19,19 @@ import _10_Demos_et_tests.testerEnLot
 
 fun chiffrerCesar(cle: Int, message: String): String {
     var messageCesar = ""
+    var nouvelleLettre :Char
 
-    // A COMPLETER ICI
+    for(lettre in message) {
+        if(lettre in 'a'..'z') {
+            nouvelleLettre = (((lettre - 'a' +cle)%26)+'a').toChar()
+        } else {
+            if(lettre in 'A'..'Z') {
+                nouvelleLettre = 
+            } else {
+                nouvelleLettre = lettre
+            }
+        }
+    }
 
     return messageCesar
 }
